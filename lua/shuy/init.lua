@@ -1,5 +1,6 @@
 require('shuy.remap')
 require('shuy.lazy_init')
+require('shuy.set')
 
 local autogroup = vim.api.nvim_create_augroup
 local ShuyGroup = autogroup("Shuy", {})
@@ -15,8 +16,8 @@ autocmd('LspAttach', {
 		vim.keymap.set("n", "<leader>ls", function() vim.lsp.buf.workspace_symbol() end, opts)
 		vim.keymap.set("n", "<leader>ld", function() vim.diagnostic.open_float() end, opts)
 		vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
-		vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts)
-		vim.keymap.set("n", "<leader>ln", function() vim.lsp.buf.rename() end, opts)
+		vim.keymap.set("n", "<leader>lR", function() vim.lsp.buf.references() end, opts)
+		vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, opts)
 		vim.keymap.set("n", "<leader>lh", function() vim.lsp.buf.signature_help() end, opts)
 		vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 		vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
