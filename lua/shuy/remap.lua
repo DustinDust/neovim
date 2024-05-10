@@ -10,5 +10,5 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- greatest remap ever
 -- copy that does not replace current clipboard content
 vim.keymap.set("x", "<leader>p", [["_dP]])
--- yank that concat to clip board
+-- yank the whole line
 vim.keymap.set("n", "<leader>Y", [["+Y]])
