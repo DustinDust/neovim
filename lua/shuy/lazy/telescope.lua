@@ -19,7 +19,7 @@ return {
         vim.keymap.set('n', '<leader>ps', function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end)
-        vim.keymap.set('n', '<leader>pls', builtin.live_grep, {})
+        vim.keymap.set('n', '<leader>pS', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
         vim.keymap.set('n', '<leader>be', builtin.buffers, {})
         vim.keymap.set('n', '<leader>bs', builtin.current_buffer_fuzzy_find, {})
