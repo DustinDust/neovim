@@ -22,6 +22,6 @@ return {
         vim.keymap.set('n', '<leader>pS', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
         vim.keymap.set('n', '<leader>be', builtin.buffers, {})
-        vim.keymap.set('n', '<leader>bs', builtin.current_buffer_fuzzy_find, {})
+        vim.keymap.set('n', '<leader>bf', builtin.current_buffer_fuzzy_find, {})
     end
 }
