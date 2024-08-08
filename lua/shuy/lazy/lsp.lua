@@ -52,6 +52,13 @@ return {
                         }
                     }
                 end,
+                ["tsserver"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.tsserver.setup {
+                        capabilities = capabilities,
+                        settings = {}
+                    }
+                end,
             }
         })
 
@@ -74,7 +81,11 @@ return {
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
                 { name = 'buffer' },
-            })
+            }),
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
         })
 
         vim.diagnostic.config({
