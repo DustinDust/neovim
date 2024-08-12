@@ -26,7 +26,8 @@ autocmd('LspAttach', {
 			{ 'n', 'x' },
 			'<leader>lf',
 			function()
-				vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+				-- vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+                vim.cmd("Format")
 			end, opts
 		)
 	end
