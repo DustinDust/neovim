@@ -59,6 +59,11 @@ return {
                         settings = {}
                     }
                 end,
+                ['emmet_ls'] = function()
+                    require('lspconfig').emmet_ls.setup {
+                        filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue", "htmlangular", "heex" }
+                    }
+                end
             }
         })
 
