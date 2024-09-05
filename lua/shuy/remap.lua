@@ -21,7 +21,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+d') -- delete motion
 vim.keymap.set({ 'n', 'v' }, '<leader>D', '"+D') -- delete line
 
 -- Paste from system clipboard
-vim.keymap.set('n', '<leader>p', '"+p') -- paste after cursor
-vim.keymap.set('n', '<leader>P', '"+P') -- paste before cursor
+vim.keymap.set('n', '<leader>pp', '"+p') -- paste after cursor
 vim.keymap.set('x', '<leader>p', [["_dP]]) -- paste without overwrite current clipboard
+
 
