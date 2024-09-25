@@ -3,7 +3,7 @@ return {
     'stevearc/conform.nvim',
     opts = {},
     config = function()
-        vim.api.nvim_create_user_command("Format", function(args)
+        vim.api.nvim_create_user_command("Fmt", function(args)
             local range = nil
             if args.count ~= -1 then
                 local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
@@ -15,6 +15,24 @@ return {
             require("conform").format({ async = true, lsp_format = "fallback", range = range })
         end, { range = true })
 
+        vim.api.nvim_create_user_command("FormatDisable", function()
+            vim.b.enable_autoformat = false
+            vim.g.enable_autoformat = false
+        end, {
+            desc = "Disable autoformat-on-save",
+        })
+
+        vim.api.nvim_create_user_command("FormatEnable", function(args)
+            if args.bang then
+                vim.b.enable_autoformat = true
+            else
+                vim.g.enable_autoformat = true
+            end
+        end, {
+            desc = "Re-enable autoformat-on-save",
+            bang = true,
+        })
+
         require("conform").setup {
             log_level = vim.log.levels.DEBUG,
             formatters_by_ft = {
@@ -23,10 +41,13 @@ return {
                 typescriptreact = { "prettier" },
                 ruby = { "rubocop" }
             },
-            -- format_on_save = {
-            --     lsp_format = "fallback",
-            --     timeout_ms = 500,
-            -- },
+            format_on_save = function(bufnr)
+                -- Disable with a global or buffer-local variable
+                if vim.g.enable_autoformat or vim.b[bufnr].enable_autoformat then
+                    return { timeout_ms = 1000, lsp_format = "fallback" }
+                end
+            end,
+
             default_format_opts = {
                 lsp_format = "fallback",
             },
