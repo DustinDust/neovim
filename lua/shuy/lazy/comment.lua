@@ -2,12 +2,12 @@ return {
     "numToStr/Comment.nvim",
     opts = {
         toggler = {
-            line = "<leader>cc",
-            block = "<leader>bc"
+            line = "<leader>/",
+            block = "<leader>?"
         },
         opleader = {
-            line = "<leader>c",
-            block = "<leader>b",
+            line = "<leader>/",
+            block = "<leader>?",
         }
     }
 }
