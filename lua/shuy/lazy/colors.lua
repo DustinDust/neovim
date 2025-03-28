@@ -20,7 +20,7 @@ function ColorMyPencils(color)
         keywordStyle = { italic = true },
         statementStyle = { bold = true },
         typeStyle = {},
-        transparent = false,   -- do not set background color
+        transparent = true,   -- do not set background color
         dimInactive = true,    -- dim inactive window `:h hl-NormalNC`
         terminalColors = true, -- define vim.g.terminal_color_{0,17}
         colors = {             -- add/modify theme and palette colors
@@ -74,7 +74,7 @@ function ColorMyPencils(color)
             light = "latte",
             dark = "mocha",
         },
-        transparent_background = false, -- disables setting the background color.
+        transparent_background = true, -- disables setting the background color.
         show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
         term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
         dim_inactive = {
@@ -143,7 +143,6 @@ return {
     {
         'rebelot/kanagawa.nvim',
         config = function()
-            ColorMyPencils("kanagawa")
         end
     },
     {
@@ -151,6 +150,7 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
+            ColorMyPencils("catppuccin")
         end
     }
 }
