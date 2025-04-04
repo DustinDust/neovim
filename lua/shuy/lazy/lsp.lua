@@ -26,7 +26,6 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "tsserver",
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
@@ -50,13 +49,6 @@ return {
                                 }
                             }
                         }
-                    }
-                end,
-                ["tsserver"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.tsserver.setup {
-                        capabilities = capabilities,
-                        settings = {}
                     }
                 end,
                 ['emmet_ls'] = function()
