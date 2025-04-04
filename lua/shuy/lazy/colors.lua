@@ -142,6 +142,7 @@ return {
     {
         'rebelot/kanagawa.nvim',
         config = function()
+            ColorMyPencils("kanagawa")
         end
     },
     {
@@ -149,7 +150,6 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
-            ColorMyPencils("catppuccin")
         end
     }
 }
