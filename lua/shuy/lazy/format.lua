@@ -47,6 +47,27 @@ return {
                     return { timeout_ms = 1000, lsp_format = "fallback" }
                 end
             end,
+            formatters = {
+                rubocop = {
+                    command = "rbenv exec rubocop",
+                    args = { "--stdin", "$FILENAME", "--format", "json" },
+                    stdin = true,
+                    to_stdin = true,
+                    to_tempfile = true,
+                    from_tempfile = true,
+                    from_stderr = true,
+                    to_stdout = false,
+                    from_json = function(output)
+                        local result = vim.json.decode(output)
+                        return result[1].offenses
+                    end,
+                },
+                prettier = {
+                    command = "prettier",
+                    args = { "--stdin-filepath", "$FILENAME" },
+                    stdin = true,
+                },
+            },
 
             default_format_opts = {
                 lsp_format = "fallback",

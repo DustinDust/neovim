@@ -30,3 +30,5 @@ vim.opt.updatetime = 50
 vim.opt.background = "dark"
 
 -- vim.opt.colorcolumn = "80"
+ColorMyPencils("catppuccin")
+vim.o.background = "light"

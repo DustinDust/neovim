@@ -13,5 +13,9 @@ return {
         vim.keymap.set('n', '<leader>sb', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
             desc = "Search on current file"
         })
+        require("spectre").setup({
+            open_cmd = "belowright 10new",
+            live_update = true,
+        })
     end
 }

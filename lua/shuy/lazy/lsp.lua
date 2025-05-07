@@ -36,6 +36,13 @@ return {
                         capabilities = capabilities
                     }
                 end,
+                ["ruby_lsp"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ruby_lsp.setup({
+                        formatter = "standard",
+                        linters = {"standard"}
+                    })
+                end,
 
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
