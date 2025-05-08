@@ -24,46 +24,31 @@ return {
 
         require("fidget").setup({})
         require("mason").setup()
+        require("lspconfig").ruby_lsp.setup({
+            formatter = "standard",
+            linters = { "standard" }
+        })
+        require("lspconfig").lua_ls.setup({
+            capabilities = capabilities,
+            settings = {
+                Lua = {
+                    runtime = { version = "Lua 5.1" },
+                    diagnostics = {
+                        globals = { "vim", "it", "describe", "before_each", "after_each" }
+                    }
+                }
+            }
+        })
+
+        require('lspconfig').emmet_ls.setup {
+            filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue", "htmlangular", "heex" }
+        }
+
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "rust_analyzer",
-                "gopls",
+                "vimls"
             },
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
-                end,
-                ["ruby_lsp"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.ruby_lsp.setup({
-                        formatter = "standard",
-                        linters = {"standard"}
-                    })
-                end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                runtime = { version = "Lua 5.1" },
-                                diagnostics = {
-                                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
-                    }
-                end,
-                ['emmet_ls'] = function()
-                    require('lspconfig').emmet_ls.setup {
-                        filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue", "htmlangular", "heex" }
-                    }
-                end
-            }
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
