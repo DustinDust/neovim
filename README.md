@@ -1,7 +1,9 @@
 # My minimalistic neovim configuration
 Inspired by Mr.ThePrimeagen (if u haven't followed him yet, check him out!)
 
+
 ## Prerequisite
+0. Neovim version 0.11+ (since mason-lspconfig is updated to the newest)
 1. [Ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation)
 2. [Lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#installation)
 3. Some c/c++ compiler (to compile [tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#requirements) parsers)
@@ -34,6 +36,7 @@ Inspired by Mr.ThePrimeagen (if u haven't followed him yet, check him out!)
 |\<leader>ps|**S**earch the **p**roject for the user input string|Normal|
 |\<leader>vh|**V**iew **h**elp pages for Neovim & plugins |Normal|
 |\<leader>ha|**A**dd current buffer to **h**arpoon|Normal|
+| \<leader>sp|**S**earch **project** (advanced search) |Normal|
 |\<leader>1|Move to marked buffer 1|Normal|
 |\<leader>2|Move to marked buffer 2|Normal|
 |\<leader>3|Move to marked buffer 3|Normal|

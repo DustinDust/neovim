@@ -94,7 +94,7 @@ return {
                 flavour = "auto", -- latte, frappe, macchiato, mocha
                 background = {    -- :h background
                     light = "latte",
-                    dark = "mocha",
+                    dark = "frappe",
                 },
                 dim_inactive = {
                     enabled = false,   -- dims the background color of inactive window
