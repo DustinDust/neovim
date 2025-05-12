@@ -5,16 +5,14 @@ Inspired by Mr.ThePrimeagen (if u haven't followed him yet, check him out!)
 ## Prerequisite
 0. Neovim version 0.11+ (since mason-lspconfig is updated to the newest)
 1. [Ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation)
-2. [Lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#installation)
-3. Some c/c++ compiler (to compile [tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#requirements) parsers)
+2. [Lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#installation) (Optional)
+3. A c/c++ compiler (to compile [tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#requirements) parsers)
 
 
 ## Key binds
 ### LSP key binds
 |key|action|mode|
 |--|--|--|
-|K*|Hover current token|Normal|
-|gd*|<b>G</b>o to <b>d</b>efinition|Normal|
 |\<leader>ls|Workspace <b>s</b>ymbol|Normal|
 |\<leader>la|Code <b>a</b>ction|Normal|
 |\<leader>lR|<b>R</b>eferences|Normal|
@@ -25,6 +23,7 @@ Inspired by Mr.ThePrimeagen (if u haven't followed him yet, check him out!)
 |[d|Next diagnostic|Normal|
 |]d|Previous diagnostic|Normal|
 |\<leader>lf|<b>F</b>ormat code|Normal, Visual|
+|\<leader>u|<b>u</b>ndotree buffer|normal|
 
 ### Project navigation key binds
 | key | action | mode |
@@ -49,9 +48,11 @@ Inspired by Mr.ThePrimeagen (if u haven't followed him yet, check him out!)
 |\<leader>e|show file **e**xplorer buffer|Normal|
 
 ### Git
+You can use `:Git` from [fugitive.vim](https://github.com/tpope/vim-fugitive) as well. Currently there're no key bind for fugitive.
+
 | key | action | mode |
 |--|--|--|
-|\<leader>gl|Show **l**azy git UI|Normal|
+|\<leader>gl|Show **l**azy git UI (disabled by default)|Normal|
 |\<leader>gs|**S**tage hunk|Normal, Visual|
 |\<leader>gr|**R**eset hunk|Normal, Visual|
 |\<leader>gu|**U**ndo stage hunk|Normal|
